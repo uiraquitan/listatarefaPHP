@@ -1,0 +1,120 @@
+.main_tarefas {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.tarefa {
+    width: 70%;
+    border: 1px solid #ccc;
+}
+
+.tarefa ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #ccc;
+}
+
+.tarefa ul li {
+    list-style: none;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+}
+
+.tarefa ul li:first-child {
+    border-right: 1px solid #ccc;
+    padding: 5px;
+}
+
+.tarefa ul li p,
+.tarefa ul li span {
+    font-size: 0.9em;
+    color: #555;
+
+}
+
+.tarefa_info {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tarefa_info p {
+    width: 100%;
+    padding: 5px;
+    font-size: 1.1em;
+}
+
+.aside {
+    width: 30%;
+}
+
+.aside ul {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarefas_config {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.tarefas_config a {
+    width: 50%;
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    padding: 5px;
+}
+.tarefas_config a:hover{
+    background-color: #111;
+    color: #fff;
+}
+.tarefas_config a:first-child {
+    border-right: 1px solid #fbfbfb;
+}
+
+.aside ul a {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ccc;
+    text-decoration: none;
+    margin-top: 5px;
+    padding: 5px;
+
+}
+
+.aside ul a:hover {
+    background-color: #bbb;
+}
+
+.aside ul a span {
+    font-size: 0.8em;
+    font-weight: 400;
+    color: #555;
+    margin-top: 2px;
+}
+
+@media(max-width: 500px) {
+
+    .aside,
+    .tarefa {
+        width: 100%;
+    }
+}
