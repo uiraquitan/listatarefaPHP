@@ -4,7 +4,9 @@ require __DIR__ . "/vendor/autoload.php";
 
 use App\Database\Connect;
 use App\Entity\Tarefas;
+use App\Session\Login;
 
+Login::requiredLogged();
 $id = filter_input(INPUT_GET, 'tarefa', FILTER_DEFAULT);
 
 $tarefa = Tarefas::getTarefa($id);

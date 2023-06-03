@@ -50,9 +50,15 @@ form h1 {
     margin: 10px;
 }
 
+.form_btn a,
 .form_btn button {
     border: 1px solid #ccc;
     padding: 5px 15px;
     margin-right: 5px;
     cursor: pointer;
+}
+.form_btn a{
+    text-decoration: none;
+    background-color: #111;
+    color: #fbfbfb;
 }

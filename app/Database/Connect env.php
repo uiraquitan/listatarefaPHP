@@ -120,6 +120,7 @@ class Connect
         $order = mb_strlen($order) ? "ORDER BY " . $order : "";
         $offset = mb_strlen($offset) ? "LIMIT " . $offset : "";
         $query = "SELECT * FROM " . $this->table . " " . $where . " " . $order . " " . $offset;
+        var_dump($query);
         return $this->execute($query);
     }
 

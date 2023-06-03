@@ -2,7 +2,9 @@
 require __DIR__ . "/vendor/autoload.php";
 
 use App\Entity\Tarefas;
+use App\Session\Login;
 
+Login::requiredLogged();
 
 $mensagem = '';
 $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);

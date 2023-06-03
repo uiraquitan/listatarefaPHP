@@ -16,6 +16,22 @@ if (isset($_GET['msg'])) {
         case 'del':
             $message = "<p class='danger'>Deletado com Sucesso</p>";
             break;
+
+        case 'cadusererr':
+            $message = "<p class='danger'>Usuário já existente!</p>";
+            break;
+
+        case 'caduser':
+            $message = "<p class='success'>Usuário Cadastrado!</p>";
+            break;
+
+        case 'loguser':
+            $message = "<p class='success'>Usuário logado com sucesso!</p>";
+            break;
+
+        case 'logusererr':
+            $message = "<p class='danger'>Erro: Usuário ou senha!</p>";
+            break;
     }
 }
 ?>
@@ -41,6 +57,7 @@ if (isset($_GET['msg'])) {
             </div>
             <nav class="main_header_nav">
                 <ul>
+                    <?php if (isset($_SESSION['usuario']['id'])) : ?>
                     <li><a href="./" title="Lista">Lista</a></li>
                     <li><a href="adicionartarefa.php" title="Adicionar">
                             <span class="material-symbols-outlined">
@@ -48,18 +65,30 @@ if (isset($_GET['msg'])) {
                             </span>
                         </a>
                     </li>
-                    <li><a href="login.php" title="Fazer Login">
-                            <span class="material-symbols-outlined">
-                                login
-                            </span>
-                        </a>
-                    </li>
-                    <li><a href="sair.php" title="Sair">
-                            <span class="material-symbols-outlined">
-                                logout
-                            </span>
-                        </a>
-                    </li>
+                    <?php endif; ?>
+                    <?php if (!isset($_SESSION['usuario']['id'])) : ?>
+                         <li>
+                            <a href="login.php" title="Fazer Login">
+                                <span class="material-symbols-outlined">
+                                    login
+                                </span>
+                            </a>
+                        </li>
+                         <li>
+                            <a href="cadastrar.php" title="Cadastrar">
+                                Cadastrar
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if (isset($_SESSION['usuario']['id'])) : ?>
+                        <li>
+                            <a href="sair.php" title="Sair">
+                                <span class="material-symbols-outlined">
+                                    logout
+                                </span>
+                            </a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </nav>
         </div>

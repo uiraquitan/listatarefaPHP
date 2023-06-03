@@ -3,7 +3,9 @@ require __DIR__ . "/vendor/autoload.php";
 
 use App\Entity\Tarefas;
 
+use App\Session\Login;
 
+Login::requiredLogged();
 /**
  * RECEBENDO O ID PARA SER ALTERADO
  */

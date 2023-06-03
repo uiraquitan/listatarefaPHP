@@ -4,8 +4,9 @@ require __DIR__ . "/vendor/autoload.php";
 
 use App\Database\Connect;
 use App\Entity\Tarefas;
+use App\Session\Login;
 
-
+Login::requiredLogged();
 
 $list = Tarefas::getTarefas("deleted_at is null");
 
